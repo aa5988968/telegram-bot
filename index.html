@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn Money Bot</title>
-    <!-- টেলিগ্রাম ওয়েব অ্যাপের সঠিক স্ক্রিপ্ট ফাইল -->
+    <title>Ads Bot Test</title>
     <script src="https://telegram.org"></script>
     <style>
-        body { 
-            font-family: sans-serif; 
-            text-align: center; 
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f0f0f0; }
         .btn { 
-            background-color: #0088cc; 
-            color: white; 
-            padding: 15px 25px; 
-            border: none; 
-            border-radius: 8px; 
-            cursor: pointer;
-            font-size: 18px;
-            margin-top: 20px;
+            background-color: #0088cc; color: white; padding: 20px 40px; 
+            border: none; border-radius: 12px; cursor: pointer; font-size: 20px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
 
-    <h2>বিজ্ঞাপন দেখে টাকা আয় করুন</h2>
-    <p>নিচের বাটনে ক্লিক করে বিজ্ঞাপনটি দেখুন।</p>
+    <h2>বিজ্ঞাপন টেস্ট পেজ</h2>
+    <p>বাটনটি কাজ করছে কি না পরীক্ষা করুন।</p>
 
-    <!-- id="adButton" যোগ করা হয়েছে -->
-    <button class="btn" id="adButton">বিজ্ঞাপন দেখুন</button>
+    <!-- বাটন -->
+    <button class="btn" id="checkButton">বিজ্ঞাপন দেখুন</button>
 
     <script>
         const tg = window.Telegram.WebApp;
-        tg.ready(); // অ্যাপটি প্রস্তুত কিনা নিশ্চিত করা
+        tg.ready();
+        tg.expand();
 
-        document.getElementById('adButton').addEventListener('click', function() {
-            const myAdLink = "https://www.google.com"; 
-            
-            // সরাসরি লিঙ্ক ওপেন করার চেষ্টা
-            tg.openLink(myAdLink);
-        });
+        document.getElementById('checkButton').onclick = function() {
+            // ১. প্রথমে একটি এলার্ট দিয়ে চেক করি বাটন কাজ করছে কি না
+            alert("বাটন ক্লিক হয়েছে! এখন লিঙ্কটি খোলার চেষ্টা করছি...");
+
+            const myAdLink = "https://www.google.com"; // প্রথমে গুগল দিয়ে টেস্ট করুন
+
+            try {
+                // ২. টেলিগ্রামের নিজস্ব মেথড
+                tg.openLink(myAdLink);
+            } catch (e) {
+                // ৩. যদি উপরেরটা ফেইল করে তবে সাধারণ লিঙ্ক ওপেন
+                window.open(myAdLink, '_blank');
+            }
+        };
     </script>
 </body>
 </html>
