@@ -1,46 +1,19 @@
- html>
-<html lang="bn">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ads Bot Test</title>
-    <script src="https://telegram.org"></script>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f0f0f0; }
-        .btn { 
-            background-color: #0088cc; color: white; padding: 20px 40px; 
-            border: none; border-radius: 12px; cursor: pointer; font-size: 20px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+    <title>Test Bot</title>
 </head>
-<body>
+<body style="text-align: center; padding-top: 100px;">
 
-    <h2>বিজ্ঞাপন টেস্ট পেজ</h2>
-    <p>বাটনটি কাজ করছে কি না পরীক্ষা করুন।</p>
+    <h1>বিজ্ঞাপন টেস্ট</h1>
+    <br>
+    
+    <!-- একদম সাধারণ নীল রঙের বাটন -->
+    <a href="https://www.google.com" 
+       style="background: blue; color: white; padding: 20px; text-decoration: none; font-size: 25px; border-radius: 10px; display: inline-block;">
+       এখানে ক্লিক করুন
+    </a>
 
-    <!-- বাটন -->
-    <button class="btn" id="checkButton">বিজ্ঞাপন দেখুন</button>
-
-    <script>
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-        tg.expand();
-
-        document.getElementById('checkButton').onclick = function() {
-            // ১. প্রথমে একটি এলার্ট দিয়ে চেক করি বাটন কাজ করছে কি না
-            alert("বাটন ক্লিক হয়েছে! এখন লিঙ্কটি খোলার চেষ্টা করছি...");
-
-            const myAdLink = "https://www.google.com"; // 
-
-            try {
-                // ২. টেলিগ্রামের নিজস্ব মেথড
-                tg.openLink(myAdLink);
-            } catch (e) {
-                // ৩. যদি উপরেরটা ফেইল করে তবে সাধারণ লিঙ্ক ওপেন
-                window.open(myAdLink, '_blank');
-            }
-        };
-    </script>
 </body>
 </html>
