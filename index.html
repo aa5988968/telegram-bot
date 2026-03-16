@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earn Money Bot</title>
-    <!-- টেলিগ্রাম ওয়েব অ্যাপ স্ক্রিপ্ট -->
+    <!-- টেলিগ্রাম ওয়েব অ্যাপের সঠিক স্ক্রিপ্ট ফাইল -->
     <script src="https://telegram.org"></script>
     <style>
         body { 
@@ -21,6 +21,7 @@
             border-radius: 8px; 
             cursor: pointer;
             font-size: 18px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -29,18 +30,20 @@
     <h2>বিজ্ঞাপন দেখে টাকা আয় করুন</h2>
     <p>নিচের বাটনে ক্লিক করে বিজ্ঞাপনটি দেখুন।</p>
 
-    <!-- বিজ্ঞাপন ওপেন করার বাটন -->
-    <button class="btn" onclick="openAd()">বিজ্ঞাপন দেখুন</button>
+    <!-- id="adButton" যোগ করা হয়েছে -->
+    <button class="btn" id="adButton">বিজ্ঞাপন দেখুন</button>
 
     <script>
-        function openAd() {
-            // আপনার বিজ্ঞাপনের লিঙ্ক এখানে দিন
-            const myAdLink = "https://omg10.com/4/10608560"; 
-            window.Telegram.WebApp.openLink(myAdLink);
-        }
+        const tg = window.Telegram.WebApp;
+        tg.ready(); // অ্যাপটি প্রস্তুত কিনা নিশ্চিত করা
 
-        // টেলিগ্রাম ওয়েব অ্যাপ রেডি করা
-        window.Telegram.WebApp.ready();
+        document.getElementById('adButton').addEventListener('click', function() {
+            const myAdLink = "https://omg10.com/4/10608560"; 
+            
+            // সরাসরি লিঙ্ক ওপেন করার চেষ্টা
+            tg.openLink(myAdLink);
+        });
     </script>
 </body>
 </html>
+
