@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Test Bot</title>
+<meta charset="UTF-8">
+<title>Ad Test</title>
 </head>
-<body style="text-align: center; padding-top: 100px;">
 
-    <h1>বিজ্ঞাপন টেস্ট</h1>
-    <br>
-    
-    <!-- একদম সাধারণ নীল রঙের বাটন -->
-    <a href="https://www.google.com" 
-       style="background: blue; color: white; padding: 20px; text-decoration: none; font-size: 25px; border-radius: 10px; display: inline-block;">
-       এখানে ক্লিক করুন
-    </a>
+<body style="text-align:center;margin-top:100px;">
+
+<h1>বিজ্ঞাপন টেস্ট</h1>
+
+<button onclick="openAd()" 
+style="padding:20px;font-size:22px;background:blue;color:white;border:none;border-radius:10px;">
+বিজ্ঞাপন দেখুন
+</button>
+
+<script>
+function openAd(){
+window.open("https://www.google.com","_blank");
+}
+</script>
 
 </body>
 </html>
