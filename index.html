@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ad Test</title>
+    <meta charset="UTF-8">
+    <title>Ads Bot</title>
 </head>
+<body style="text-align:center; padding-top:100px; font-family:sans-serif;">
 
-<body style="text-align:center;margin-top:100px;">
+    <h1>💰 Ads Earn Page</h1>
+    <p>Click the button to view ads</p>
 
-<h1>বিজ্ঞাপন টেস্ট</h1>
+    <button onclick="openAd()" 
+        style="padding:15px 30px; font-size:18px; background:blue; color:white; border:none; border-radius:10px;">
+        🔵 View Ads
+    </button>
 
-<button onclick="openAd()" 
-style="padding:20px;font-size:22px;background:blue;color:white;border:none;border-radius:10px;">
-বিজ্ঞাপন দেখুন
-</button>
+    <script>
+        function openAd() {
+            // এখানে তোমার ad link বসাও
+            var adLink = "https://omg10.com/4/10608560";
 
-<script>
-function openAd(){
-window.open("https://aa5988968.github.io/telegram-bot/");
-}
-</script>
+            // নতুন ট্যাবে ওপেন হবে
+            window.open(adLink, "_blank");
+
+            // alert message (optional)
+            alert("Ad Opened Successfully ✅");
+        }
+    </script>
 
 </body>
 </html>
